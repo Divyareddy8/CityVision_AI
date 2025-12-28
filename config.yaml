@@ -1,0 +1,36 @@
+object_detection:
+  model_type: "yolov5"
+  confidence_threshold: 0.5
+  target_classes: ["person", "car", "bus", "truck", "motorcycle"]
+
+traffic_analysis:
+  congestion_thresholds:
+    low: 10
+    medium: 30
+    high: 50
+  update_interval: 30
+
+crowd_analysis:
+  method: "counting"
+  density_thresholds:
+    low: 5
+    medium: 20
+    high: 50
+
+parking_analysis:
+  detection_method: "grid"
+  grid_size: [10, 10]
+
+pedestrian_analysis:
+  max_track_age: 30
+  trajectory_length: 50
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+
+dashboard:
+  host: "0.0.0.0"
+  port: 5000
+  debug: true
